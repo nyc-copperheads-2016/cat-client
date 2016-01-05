@@ -20,6 +20,4 @@ $(document).ready(function(){
   var view = new View();
   var ctrl = new Controller(view);
   ctrl.index();
-
-
 });
