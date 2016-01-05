@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Cat Collection</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.js"></script>
+  <script type="text/javascript" src="http://momentjs.com/downloads/moment.js"></script>
+  <script type="text/javascript" src="model.js"></script>
+  <script type="text/javascript" src="view.js"></script>
+  <script type="text/javascript" src="controller.js"></script>
+</head>
+<body>
+<h1>Cats</h1>
+
+<form>
+  Name: <input name="name">
+  Breed: <input name="breed">
+  Born: <input type="date" name="born_on">
+  Image: <input name="image_url">
+  <input type="submit" value="Add cat">
+</form>
+
+<div id="cat-list"></div>
+
+<script id="cat-template" type="text/x-handlebars-template">
+  <div class="cat">
+    <div class="cat-pic">
+      <img src="{{cat.image_url}}">
+    </div>
+    <div class="cat-details">
+      <div>Name: {{cat.name}} </div>
+      <div>Breed: {{cat.breed_name}} </div>
+      <div>Age: {{cat.age}} </div>
+    </div>
+  </div>
+</script>
+
+
+<script id="cat-list-template" type="text/x-handlebars-template">
+{{#each cats as |cat index|}}
+  {{> catTemplate cat=cat }}
+{{/each}}
+</script> 
+
+</body>
+</html>
