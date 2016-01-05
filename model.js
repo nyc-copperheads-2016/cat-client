@@ -11,7 +11,7 @@ Cat.prototype.age = function() {
 }
 
 Cat.loadCats = function() {
-  return $.get('http://localhost:3000/cats')
+  return $.get('https://stark-harbor-5038.herokuapp.com/cats')
   .then(function(response){
     var cats = [];
     response.forEach(function(ele) {
@@ -23,7 +23,7 @@ Cat.loadCats = function() {
 
 Cat.createCat = function(params) {
   return $.ajax({
-    url: 'http://localhost:3000/cats',
+    url: 'https://stark-harbor-5038.herokuapp.com/cats',
     dataType: 'json',
     method: 'POST',
     data: params
